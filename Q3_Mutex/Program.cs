@@ -1,11 +1,5 @@
 ﻿// Mutex: https://learn.microsoft.com/en-us/dotnet/api/system.threading.mutex?view=net-10.0
 
-// Mutex can be used for inter-process synchronization
-// unlike Monitor and Lock which are limited to inter-thread synchronization within the same process.
-// Example of shared Mutex across processes:
-//     var mutex = new Mutex(initiallyOwned: false, name: @"Q3_Mutex");
-// Next, run the executable multiple times to see the inter-process synchronization in action.
-
 var mutex = new Mutex();
 var nbThreadInProgress = 0;
 var countExclusiveAccess = 0;

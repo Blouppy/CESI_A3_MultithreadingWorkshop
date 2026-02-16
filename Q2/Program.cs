@@ -3,10 +3,13 @@
 var nbThreadInProgress = 0;
 
 const int nbThread = 300;
+
 for (var i = 0; i < nbThread; i++)
 {
     var myThreadFct = new Thread(() => FctA($"name_{i}"));
+    
     myThreadFct.Start();
+    
     Thread.Sleep(10);
 }
 

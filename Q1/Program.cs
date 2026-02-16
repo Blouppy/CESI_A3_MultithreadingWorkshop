@@ -3,11 +3,14 @@
 var nbThreadInProgress = 0;
 
 const int nbThread = 300;
+
 for (var i = 0; i < nbThread; i++)
 {
     var myThreadFct = new Thread(() => FctA($"name_{i}"));
+    
     // The execution order of threads is random. e.g: Thread 2 may be executed after Thread 3.
     myThreadFct.Start();
+    
     Thread.Sleep(10);
 }
 

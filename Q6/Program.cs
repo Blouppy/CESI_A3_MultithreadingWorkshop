@@ -8,6 +8,7 @@ const int nbThread = 300;
 
 // CountdownEvent implements IDisposable so we use a using statement to dispose it properly
 using var countdownEvent = new CountdownEvent(initialCount: nbThread);
+
 for (var i = 0; i < nbThread; i++)
 {
     var myThreadFct = new Thread(() => FctA($"name_{i}"));
@@ -16,6 +17,7 @@ for (var i = 0; i < nbThread; i++)
 }
 
 countdownEvent.Wait();
+
 Console.WriteLine("Press any key to exit...");
 Console.ReadKey();
 
